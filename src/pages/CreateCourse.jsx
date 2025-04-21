@@ -31,18 +31,35 @@ function CreateCourse() {
 		setSections(updated);
 	};
 
-	const handleSubmit = (e) => {
+	const convertToBase64 = (file) => {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload = () => resolve(reader.result);
+			reader.onerror = (error) => reject(error);
+		});
+	};
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log('Course Info:', {
+		const base64Thumbnail = thumbnail ? await convertToBase64(thumbnail) : null;
+
+		const newCourse = {
+			id: Date.now(),
 			title,
 			description,
 			price,
-			thumbnail,
+			thumbnail: base64Thumbnail, // 👈 save base64 string here
 			sections,
-		});
+		};
 
-		alert('Course created! (Check console for full data)');
+		const existingCourses =
+			JSON.parse(localStorage.getItem('instructorCourses')) || [];
+		const updatedCourses = [...existingCourses, newCourse];
+		localStorage.setItem('instructorCourses', JSON.stringify(updatedCourses));
+
+		alert('Course created successfully!');
 	};
 
 	return (

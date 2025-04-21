@@ -9,6 +9,8 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import CreateCourse from './pages/CreateCourse';
+import InstructorDashboard from './pages/InstructorDashboard';
+import StudentDashboard from './pages/StudentDashboard';
 
 function App() {
 	return (
@@ -22,6 +24,8 @@ function App() {
 				<Route path='/register' element={<Register />} />
 				<Route path='/dashboard/*' element={<Dashboard />} />
 				<Route path='/create-course' element={<CreateCourse />} />
+				<Route path='/dashboard' element={<InstructorDashboard />} />
+				<Route path='/student-dashboard' element={<StudentDashboard />} />
 			</Routes>
 		</Router>
 	);
