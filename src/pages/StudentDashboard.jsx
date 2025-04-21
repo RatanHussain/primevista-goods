@@ -1,57 +1,73 @@
 /** @format */
 
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// src/pages/StudentDashboard.js
 
-function StudentDashboard() {
-	const [courses, setCourses] = useState([]);
-	const user = JSON.parse(localStorage.getItem('loggedInUser'));
-	const navigate = useNavigate();
+import React, { useState } from 'react';
 
-	useEffect(() => {
-		const saved = JSON.parse(localStorage.getItem('instructorCourses')) || [];
-		setCourses(saved);
-		const user = JSON.parse(localStorage.getItem('loggedInUser'));
-		if (!user) {
-			navigate('/login');
-		}
-	}, []);
+const videos = [
+	{
+		title: '01. How To Start Amazon FBA Wholesale Business From Bangladesh',
+		url: 'https://drive.google.com/file/d/1UmzH5OoxBVi50H7xVVXNbgF9Ec-im0D_/preview',
+	},
+	{
+		title: '02. How To Create LLC For Amazon FBA Wholesale Business',
+		url: 'https://drive.google.com/file/d/1BW8r4OF5dQWFeH4hPtGbiA4OflPRduQN/preview',
+	},
+	{
+		title: '03. How To Fill Sales TAX Every 3 months - LLC Tax Filling',
+		url: 'https://drive.google.com/file/d/1dw2mVU_8wUE42x_rPy5MaNe40OuGhucm/preview',
+	},
+	{
+		title: '04. How To Open Amazon Seller Account From Bangladesh',
+		url: 'https://drive.google.com/file/d/17fGwIp68FElQk3rmF2EJ-nelnhckn2bX/preview',
+	},
+	// 👉 Add all 50+ videos here like above...
+];
+
+const StudentDashboard = () => {
+	const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
 	return (
-		<div className='max-w-6xl mx-auto mt-10'>
-			<div className='flex justify-between items-center mb-4'>
-				<h2 className='text-xl font-bold'>Welcome, {user?.name}</h2>
-				<button
-					onClick={() => {
-						localStorage.removeItem('loggedInUser');
-						window.location.href = '/login';
-					}}
-					className='bg-red-500 text-white px-3 py-1 rounded'>
-					Logout
-				</button>
+		<div style={{ display: 'flex', padding: 20 }}>
+			{/* Video list */}
+			<div style={{ width: '30%', marginRight: 20 }}>
+				<h3>Video Lessons</h3>
+				<ul style={{ listStyle: 'none', padding: 0 }}>
+					{videos.map((video, index) => (
+						<li key={index}>
+							<button
+								style={{
+									width: '100%',
+									marginBottom: 10,
+									padding: 10,
+									textAlign: 'left',
+									cursor: 'pointer',
+									border: '1px solid #ccc',
+									borderRadius: 5,
+									background: video.url === selectedVideo.url ? '#eef' : '#fff',
+								}}
+								onClick={() => setSelectedVideo(video)}>
+								{video.title}
+							</button>
+						</li>
+					))}
+				</ul>
 			</div>
 
-			<h1 className='text-3xl font-bold mb-6'>Browse Courses</h1>
-
-			{courses.length === 0 ? (
-				<p>No courses available yet.</p>
-			) : (
-				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-					{courses.thumbnail ? (
-						<img
-							src={courses.thumbnail}
-							alt='Course Thumbnail'
-							className='w-full h-40 object-cover rounded mb-2'
-						/>
-					) : (
-						<div className='w-full h-40 bg-gray-200 mb-2 flex items-center justify-center text-gray-500'>
-							No Image
-						</div>
-					)}
-				</div>
-			)}
+			{/* Video player */}
+			<div style={{ width: '70%' }}>
+				<h3>{selectedVideo.title}</h3>
+				<iframe
+					src={selectedVideo.url}
+					title='Video Player'
+					width='100%'
+					height='480'
+					allow='autoplay'
+					allowFullScreen
+				/>
+			</div>
 		</div>
 	);
-}
+};
 
 export default StudentDashboard;

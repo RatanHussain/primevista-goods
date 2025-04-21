@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom';
 function InstructorDashboard() {
 	const [courses, setCourses] = useState([]);
 	const navigate = useNavigate();
-	const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    const payments = JSON.parse(localStorage.getItem("paymentRequests")) || [];
+
 
 	useEffect(() => {
 		const user = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -42,7 +44,6 @@ function InstructorDashboard() {
 	return (
 		<div className='max-w-5xl mx-auto mt-10'>
 			<h1 className='text-3xl font-bold mb-6'>Instructor Dashboard</h1>
-
 			<div className='flex justify-between items-center mb-4'>
 				<h2 className='text-xl font-bold'>Welcome, {user?.name}</h2>
 				<button
@@ -54,7 +55,6 @@ function InstructorDashboard() {
 					Logout
 				</button>
 			</div>
-
 			{courses.length === 0 ? (
 				<p>No courses created yet.</p>
 			) : (
@@ -148,6 +148,27 @@ function InstructorDashboard() {
 					Create New Course
 				</button>
 			)}
+			<div className='mt-6'>
+				<h2 className='text-xl font-bold mb-4'>Payment Requests</h2>
+				{payments.length === 0 ? (
+					<p>No payment submissions yet.</p>
+				) : (
+					payments.map((p, i) => (
+						<div key={i} className='border p-4 mb-3 rounded shadow'>
+							<p>
+								<strong>Student:</strong> {p.userEmail}
+							</p>
+							<p>
+								<strong>Course:</strong> {p.courseTitle}
+							</p>
+							<p>
+								<strong>Status:</strong> {p.status}
+							</p>
+							<img src={p.proof} alt='proof' className='w-40 mt-2' />
+						</div>
+					))
+				)}
+			</div>
 		</div>
 	);
 }

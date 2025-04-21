@@ -12,6 +12,8 @@ import CreateCourse from './pages/CreateCourse';
 import InstructorDashboard from './pages/InstructorDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import EditCourse from './pages/EditCourse';
+import PaymentPage from "./pages/PaymentPage";
+import AmazonFBAPlaylist from './pages/AmazonFBAPlaylist';
 
 function App() {
 	return (
@@ -27,6 +29,8 @@ function App() {
 				<Route path='/dashboard' element={<InstructorDashboard />} />
 				<Route path='/student-dashboard' element={<StudentDashboard />} />
 				<Route path='/edit-course' element={<EditCourse />} />
+				<Route path="/payment" element={<PaymentPage />} />
+				<Route path="/student/videos" element={<AmazonFBAPlaylist />} />
 			</Routes>
 		</Router>
 	);

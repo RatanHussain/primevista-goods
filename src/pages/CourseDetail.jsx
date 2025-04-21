@@ -1,5 +1,6 @@
 /** @format */
 
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function CourseDetail() {
@@ -23,8 +24,42 @@ function CourseDetail() {
 		],
 	};
 
+	const [paymentProof, setPaymentProof] = useState(null);
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
+	const handlePaymentSubmit = (e) => {
+		e.preventDefault();
+
+		const user = JSON.parse(localStorage.getItem('loggedInUser'));
+		if (!user) {
+			alert('Please log in first.');
+			return;
+		}
+
+		if (!paymentProof) {
+			alert('Please upload payment screenshot or code.');
+			return;
+		}
+
+		const newPayment = {
+			userEmail: user.email,
+			courseTitle: course.title,
+			proof: URL.createObjectURL(paymentProof),
+			status: 'pending',
+		};
+
+		const existing = JSON.parse(localStorage.getItem('paymentRequests')) || [];
+		localStorage.setItem(
+			'paymentRequests',
+			JSON.stringify([...existing, newPayment])
+		);
+		setIsSubmitted(true);
+	};
+
 	return (
 		<div className='p-8 max-w-5xl mx-auto'>
+
+
 			<h1 className='text-3xl font-bold mb-4'>{course.title}</h1>
 
 			<div className='aspect-video mb-6'>
