@@ -1,6 +1,7 @@
 /** @format */
 
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateCourse() {
 	const [title, setTitle] = useState('');
@@ -8,6 +9,15 @@ function CreateCourse() {
 	const [price, setPrice] = useState('');
 	const [thumbnail, setThumbnail] = useState(null);
 	const [sections, setSections] = useState([]);
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const user = JSON.parse(localStorage.getItem('loggedInUser'));
+		if (!user || user.role !== 'admin') {
+			alert('Access denied. Only admin can create courses.');
+			navigate('/login');
+		}
+	}, []);
 
 	const handleAddSection = () => {
 		setSections([...sections, { title: '', videos: [] }]);

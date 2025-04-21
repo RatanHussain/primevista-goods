@@ -15,11 +15,61 @@ function Login() {
 		alert(`Logged in as ${email}`);
 		window.location.href = '/dashboard'; // Redirect to Dashboard after login
 	};
+	const handleLogin = (e) => {
+		e.preventDefault();
+
+		// Hardcoded admin
+		if (email === 'mdratanmia7395@gmail.com' && password === 'Ratan7395') {
+			const adminUser = {
+				name: 'RatanLLC',
+				email,
+				role: 'admin',
+			};
+			localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
+			window.location.href = '/instructor-dashboard';
+			return;
+		}
+
+		// Allowed student list
+		const allowedStudents = [
+			{
+				name: 'Rashof',
+				email: 'operation@rashof.com',
+				password: 'Ratan@7395',
+			},
+			{
+				name: 'Ratan Mia',
+				email: 'mdratanmia7096@gmail.com',
+				password: 'Ratan@7395',
+			},
+			{
+				name: 'Vista',
+				email: 'primevistagoods@gmail.com',
+				password: 'Ratan@7395',
+			},
+		];
+
+		const student = allowedStudents.find(
+			(s) => s.email === email && s.password === password
+		);
+
+		if (student) {
+			const studentUser = {
+				name: student.name,
+				email: student.email,
+				role: 'student',
+			};
+			localStorage.setItem('loggedInUser', JSON.stringify(studentUser));
+			window.location.href = '/student-dashboard';
+		} else {
+			alert('Invalid credentials.');
+		}
+	};
 
 	return (
 		<div className='max-w-md mx-auto mt-12 p-8 border rounded shadow'>
 			<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
-			<form onSubmit={handleSubmit} className='space-y-4'>
+			<form onSubmit={handleLogin} className='space-y-4'>
 				<input
 					type='email'
 					placeholder='Email'
