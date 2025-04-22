@@ -31,7 +31,7 @@ function Login() {
 		}
 
 		// Allowed student list
-		const allowedStudents = [
+		const allowedStudents = [ 
 			{
 				name: 'Rashof',
 				email: 'operation@rashof.com',

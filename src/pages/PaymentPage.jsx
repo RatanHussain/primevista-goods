@@ -115,7 +115,7 @@ const PaymentPage = () => {
 					<span className='text-blue-700'>+880 1766 074125</span>
 				</p>
 			</div>
-			<div className='my-2 bg-gray-100 p-4 rounded'>
+			{/* <div className='my-2 bg-gray-100 p-4 rounded'>
 				<img
 					className='h-10 mx-auto'
 					src='https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png'
@@ -128,7 +128,7 @@ const PaymentPage = () => {
 					<strong>Roket Number:</strong>{' '}
 					<span className='text-blue-700'>+880 1234 756789</span>
 				</p>
-			</div>
+			</div> */}
 
 			{submitted ? (
 				<p className='text-green-600 font-semibold text-center'>
