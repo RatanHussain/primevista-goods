@@ -23,6 +23,8 @@ let userData = [
 	},
 ];
 
+// 'service_cu7hgs7', 'template_1qy6psa', 'qnuOCToI-TPuimNFg';
+
 // let titleUrl = 22. holesalers & disturbers and Brand Full List, Choose your first supplier and sell on Amazon [FPC_01].mp4 - https://drive.google.com/file/d/1gxwUhht5AXSGHd0zAZdDaGLH_6fYBwFO/preview
 // 18. How To Fine Winning Products From Suppliers Shit - Scan Supplies Shit Using By Keepa [FPC_01].mp4 - https://drive.google.com/file/d/15DuDDzNOI41s9RS0C6dcxJaTs2rD75ZG/preview
 // 23. How To Manage Amazon seller Account Dashboard - Manage FBA, Order, Return, Shipment [FPC_01].mp4 - https://drive.google.com/file/d/192DHmEqQVJWlKom-Yoe2-XKFQDaVAtoC/preview

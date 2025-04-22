@@ -5,9 +5,10 @@ import emailjs from 'emailjs-com';
 
 const PaymentPage = () => {
 	const [form, setForm] = useState({
-		name: '', // now means "enroll amount"
+		name: '',
 		email: '',
 		password: '',
+		courseTitle: '',
 		proof: null,
 	});
 	const [submitted, setSubmitted] = useState(false);
@@ -24,58 +25,38 @@ const PaymentPage = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (!form.proof) {
-			alert('Please upload payment proof.');
-			return;
-		}
-
 		const reader = new FileReader();
 		reader.onloadend = () => {
-			const base64Proof = reader.result.split(',')[1]; // only Base64 part
+			const base64Proof = reader.result;
 
-			// Upload to ImgBB
-			fetch(
-				`https://api.imgbb.com/1/upload?key=93667ec36609676680800dbba97272e3`,
-				{
-					method: 'POST',
-					body: new URLSearchParams({
-						image: base64Proof,
-						name: 'payment_proof',
-					}),
-				}
-			)
-				.then((res) => res.json())
-				.then((data) => {
-					const imageUrl = data.data.url;
-
-					// Now send email
-					emailjs
-						.send(
-							'service_cu7hgs7',
-							'template_1qy6psa',
-							{
-								name: form.name,
-								email: form.email,
-								password: form.password,
-								proof_link: imageUrl, // this is used in the <a href="{{proof_link}}">
-							},
-							'qnuOCToI-TPuimNFg'
-						)
-						.then(() => {
-							setSubmitted(true);
-						})
-						.catch((err) => {
-							console.error('Email error:', err);
-							alert('Failed to send email');
-						});
+			emailjs
+				.send(
+					'YOUR_SERVICE_ID',
+					'YOUR_TEMPLATE_ID',
+					{
+						name: form.name,
+						email: form.email,
+						password: form.password,
+						courseTitle: form.courseTitle,
+						message: 'Manual payment request',
+						proof: base64Proof,
+					},
+					'YOUR_PUBLIC_KEY'
+				)
+				.then(() => {
+					setSubmitted(true);
 				})
 				.catch((err) => {
-					console.error('Image upload failed:', err);
-					alert('Failed to upload image');
+					console.error('Error sending email:', err);
+					alert('Something went wrong. Try again.');
 				});
 		};
 
-		reader.readAsDataURL(form.proof);
+		if (form.proof) {
+			reader.readAsDataURL(form.proof);
+		} else {
+			alert('Please upload payment proof.');
+		}
 	};
 
 	return (
@@ -115,20 +96,20 @@ const PaymentPage = () => {
 					<span className='text-blue-700'>+880 1766 074125</span>
 				</p>
 			</div>
-			<div className='my-2 bg-gray-100 p-4 rounded'>
-				<img
-					className='h-10 mx-auto'
-					src='https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png'
-					alt='Roket'
-				/>
-				<p className='mb-2 text-red-500'>
-					<strong className='text-black'>Account Name:</strong> Roket
-				</p>
-				<p className='mb-2'>
-					<strong>Roket Number:</strong>{' '}
-					<span className='text-blue-700'>+880 1234 756789</span>
-				</p>
-			</div>
+			{/* <div className='my-2 bg-gray-100 p-4 rounded'>
+                <img
+                    className='h-10 mx-auto'
+                    src='https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png'
+                    alt='Roket'
+                />
+                <p className='mb-2 text-red-500'>
+                    <strong className='text-black'>Account Name:</strong> Roket
+                </p>
+                <p className='mb-2'>
+                    <strong>Roket Number:</strong>{' '}
+                    <span className='text-blue-700'>+880 1234 756789</span>
+                </p>
+            </div> */}
 
 			{submitted ? (
 				<p className='text-green-600 font-semibold text-center'>
@@ -136,14 +117,10 @@ const PaymentPage = () => {
 				</p>
 			) : (
 				<form onSubmit={handleSubmit} className='space-y-4'>
-					<input
-						type='text'
-						name='name'
-						placeholder='Enroll Amount (e.g. 10,000 BDT)'
-						onChange={handleChange}
-						required
-						className='w-full border px-3 py-2 rounded'
-					/>
+					<p className='text-sm text-gray-600 mt-3'>
+						After payment, fill out the form below and upload your payment
+						proof.
+					</p>
 					<input
 						type='email'
 						name='email'
@@ -158,12 +135,6 @@ const PaymentPage = () => {
 						placeholder='New Password'
 						onChange={handleChange}
 						required
-						className='w-full border px-3 py-2 rounded'
-					/>
-					<input
-						type='file'
-						accept='image/*,application/pdf'
-						onChange={handleFileChange}
 						className='w-full border px-3 py-2 rounded'
 					/>
 					<button
