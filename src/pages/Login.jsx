@@ -48,6 +48,11 @@ function Login() {
 				email: 'primevistagoods@gmail.com',
 				password: 'Ratan@7395',
 			},
+			{
+				name: 'Belayet',
+				email: 'smbelayet99@gmail.com',
+				password: 'belayet123',
+			},
 		];
 
 		const student = allowedStudents.find(
