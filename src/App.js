@@ -9,7 +9,7 @@ import Login from './pages/Login';
 
 function App() {
 	return (
-		<Router>
+		<Router basename='/primevista-goods'>
 			<Navbar />
 			<Routes>
 				<Route path='/' element={<Home />} />
