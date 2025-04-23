@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/primevista-goods/static/css/main.cf16f226.css",
+    "main.js": "/primevista-goods/static/js/main.122126f7.js",
+    "static/js/453.6725c35a.chunk.js": "/primevista-goods/static/js/453.6725c35a.chunk.js",
+    "index.html": "/primevista-goods/index.html",
+    "main.cf16f226.css.map": "/primevista-goods/static/css/main.cf16f226.css.map",
+    "main.122126f7.js.map": "/primevista-goods/static/js/main.122126f7.js.map",
+    "453.6725c35a.chunk.js.map": "/primevista-goods/static/js/453.6725c35a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf16f226.css",
+    "static/js/main.122126f7.js"
+  ]
+}
