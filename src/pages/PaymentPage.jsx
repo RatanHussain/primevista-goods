@@ -81,7 +81,7 @@ const PaymentPage = () => {
 	return (
 		<div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen '>
 
-			<div className='max-w-xl pt-10 mx-auto mt-10 p-6 border rounded shadow '>
+			<div className='max-w-xl pt-10 mx-auto p-6 border rounded shadow '>
 				<h2 className='text-2xl font-bold mb-4 text-center'>
 					💳 Payment Instructions
 				</h2>

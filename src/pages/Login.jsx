@@ -1,6 +1,7 @@
 /** @format */
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Login() {
 	const [email, setEmail] = useState('');
@@ -67,8 +68,30 @@ function Login() {
 	};
 
 	return (
-		<div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen'>
-			<div className='max-w-md mx-auto p-8 border rounded shadow '>
+		<div className='flex-1 items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 pt-20 min-h-screen'>
+			<h1 className='text-4xl font-bold text-gray-800 mb-4 text-center'>
+			PrimeVista Goods
+			</h1>
+
+			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6'>
+				What if you could start earning online while still in school or college?
+				Our step-by-step Amazon FBA course is built for beginners — especially
+				students — who want to learn how to start a real business on Amazon and
+				earn passive income.
+			</p>
+
+			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-8'>
+				🛒 Learn how to find winning products 📦 Launch your first store with
+				confidence 💸 Build a business that works while you sleep
+			</p>
+
+			<div className='flex justify-center'>
+			<Link to='/payment' className='text-gray-700 hover:text-primary px-6 py-3 bg-pink-500 text-white rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
+					Buy Now
+				</Link>
+			</div>
+
+			<div className='max-w-md mx-auto mt-5 p-8 border rounded shadow '>
 				<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
 				<form onSubmit={handleLogin} className='space-y-4'>
 					<input

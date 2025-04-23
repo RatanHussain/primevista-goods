@@ -173,10 +173,10 @@ const StudentDashboard = () => {
 	const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
 	return (
-		<div style={{ display: 'flex', padding: 20 }}>
+		<div className='text-lg flex text-gray-700 text-center pt-5  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 ' style={{ display: 'flex', padding: 20 }}>
 			{/* Video list */}
-			<div style={{ width: '30%', marginRight: 20 }}>
-				<h3>Video Lessons</h3>
+			<div className='text-lg text-gray-700 text-center pt-20  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 ' style={{ width: '30%', marginRight: 20 }}>
+				<h3 className='text-white'>Video Lessons</h3>
 				<ul style={{ listStyle: 'none', padding: 0 }}>
 					{videos.map((video, index) => (
 						<li key={index}>
@@ -200,8 +200,8 @@ const StudentDashboard = () => {
 			</div>
 
 			{/* Video player */}
-			<div style={{ width: '70%' }}>
-				<h3>{selectedVideo.title}</h3>
+			<div className='w-[70%] sticky top-20 self-start ' style={{ width: '70%' }}>
+				<h3 className='text-white' >{selectedVideo.title}</h3>
 				<iframe
 					src={selectedVideo.url}
 					title='Video Player'

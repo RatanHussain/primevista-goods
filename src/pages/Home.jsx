@@ -68,10 +68,27 @@ function Home() {
 	};
 	return (
 		<div className='flex flex-col p-8 bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen pt-20'>
-			<h1 className='text-xl font-bold text-gray-800 text-center'>
-				Welcome to PrimeVista Goods
+			<h1 className='text-4xl font-bold text-gray-800 mb-4 text-center'>
+				Start Your Amazon FBA Journey — Build a Business While You Study
 			</h1>
-			<p className='mt-2 text-gray-600 text-center'>Learn. Grow. Succeed.</p>
+
+			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6'>
+				What if you could start earning online while still in school or college?
+				Our step-by-step Amazon FBA course is built for beginners — especially
+				students — who want to learn how to start a real business on Amazon and
+				earn passive income.
+			</p>
+
+			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-8'>
+				🛒 Learn how to find winning products 📦 Launch your first store with
+				confidence 💸 Build a business that works while you sleep
+			</p>
+
+			<div className='flex justify-center'>
+			<Link to='/payment' className='text-gray-700 hover:text-primary px-6 py-3 bg-pink-500 text-white rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
+					Buy Now
+				</Link>
+			</div>
 			<div className='flex flex-col items-center justify-center flex max-w-md mx-auto mt-12 p-8 border rounded shadow'>
 				<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
 				<form onSubmit={handleLogin} className='space-y-4'>
@@ -107,7 +124,8 @@ function Home() {
 			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
 				<div className='space-y-2'>
 					<p className='text-sm'>
-						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights
+						reserved.
 					</p>
 					<div className='space-x-4'>
 						<a href='#' className='hover:text-pink-600'>
