@@ -70,7 +70,7 @@ function Login() {
 	return (
 		<div className='flex-1 items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 pt-20 min-h-screen'>
 			<h1 className='text-4xl font-bold text-gray-800 mb-4 text-center'>
-			PrimeVista Goods
+				PrimeVista Goods
 			</h1>
 
 			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6'>
@@ -84,9 +84,21 @@ function Login() {
 				🛒 Learn how to find winning products 📦 Launch your first store with
 				confidence 💸 Build a business that works while you sleep
 			</p>
+			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
+				📱 WhatsApp (Saudi):{' '}
+				<a
+					href='https://wa.me/966547297096'
+					target='_blank'
+					rel='noopener noreferrer'
+					className='text-pink-600 hover:underline'>
+					+966 54 729 7096
+				</a>
+			</p>
 
 			<div className='flex justify-center'>
-			<Link to='/payment' className='text-gray-700 hover:text-primary px-6 py-3 bg-pink-500 text-white rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
+				<Link
+					to='/payment'
+					className='text-gray-700 hover:text-primary px-6 py-3 bg-pink-500 text-white rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
 					Buy Now
 				</Link>
 			</div>
@@ -126,7 +138,8 @@ function Login() {
 			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
 				<div className='space-y-2'>
 					<p className='text-sm'>
-						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights
+						reserved.
 					</p>
 					<div className='space-x-4'>
 						<a href='#' className='hover:text-pink-600'>
@@ -135,7 +148,7 @@ function Login() {
 						<a href='#' className='hover:text-pink-600'>
 							Terms
 						</a>
-						<a href='#' className='hover:text-pink-600'>
+						<a href='register' className='hover:text-pink-600'>
 							Support
 						</a>
 					</div>

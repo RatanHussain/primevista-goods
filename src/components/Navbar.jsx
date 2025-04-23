@@ -20,6 +20,9 @@ function Navbar() {
 				<Link to='/login' className='text-gray-700 hover:text-primary'>
 					Login
 				</Link>
+				<Link to='/register' className='text-gray-700 hover:text-primary'>
+				Contact Me
+				</Link>
 
 			</div>
 		</nav>

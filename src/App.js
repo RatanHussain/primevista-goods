@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import StudentDashboard from './pages/StudentDashboard';
 import PaymentPage from './pages/PaymentPage';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/student-dashboard' element={<StudentDashboard />} />
 				<Route path='/payment' element={<PaymentPage />} />
 				<Route path='/login' element={<Login />} />
+				<Route path='/register' element={<Register />} />
 			</Routes>
 		</Router>
 	);

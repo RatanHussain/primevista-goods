@@ -87,7 +87,7 @@ const videos = [
 	},
 	{
 		title:
-		'17. How to fine & scan supplier shit - How To use scan unlimited for Amazon [FPC_01].mp4',
+			'17. How to fine & scan supplier shit - How To use scan unlimited for Amazon [FPC_01].mp4',
 		url: 'https://drive.google.com/file/d/1ChyDXQsMo1j_Sg1lQUhctnZwLdNeCLle/preview',
 	},
 	{
@@ -173,9 +173,13 @@ const StudentDashboard = () => {
 	const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
 	return (
-		<div className='text-lg flex text-gray-700 text-center pt-5  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 ' style={{ display: 'flex', padding: 20 }}>
+		<div
+			className='text-lg flex text-gray-700 text-center pt-5  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 '
+			style={{ display: 'flex', padding: 20 }}>
 			{/* Video list */}
-			<div className='text-lg text-gray-700 text-center pt-20  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 ' style={{ width: '30%', marginRight: 20 }}>
+			<div
+				className='text-lg text-gray-700 text-center pt-20  mx-auto mb-8 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 '
+				style={{ width: '30%', marginRight: 20 }}>
 				<h3 className='text-white'>Video Lessons</h3>
 				<ul style={{ listStyle: 'none', padding: 0 }}>
 					{videos.map((video, index) => (
@@ -200,8 +204,10 @@ const StudentDashboard = () => {
 			</div>
 
 			{/* Video player */}
-			<div className='w-[70%] sticky top-20 self-start ' style={{ width: '70%' }}>
-				<h3 className='text-white' >{selectedVideo.title}</h3>
+			<div
+				className='w-[70%] sticky top-20 self-start '
+				style={{ width: '70%' }}>
+				<h3 className='text-white'>{selectedVideo.title}</h3>
 				<iframe
 					src={selectedVideo.url}
 					title='Video Player'

@@ -80,7 +80,6 @@ const PaymentPage = () => {
 
 	return (
 		<div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen '>
-
 			<div className='max-w-xl pt-10 mx-auto p-6 border rounded shadow '>
 				<h2 className='text-2xl font-bold mb-4 text-center'>
 					💳 Payment Instructions
@@ -173,13 +172,24 @@ const PaymentPage = () => {
 							className='w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
 							Submit Payment Proof
 						</button>
+						<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
+							📱 WhatsApp (Saudi):{' '}
+							<a
+								href='https://wa.me/966547297096'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='text-pink-600 hover:underline'>
+								+966 54 729 7096
+							</a>
+						</p>
 					</form>
 				)}
 			</div>
 			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
 				<div className='space-y-2'>
 					<p className='text-sm'>
-						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights
+						reserved.
 					</p>
 					<div className='space-x-4'>
 						<a href='#' className='hover:text-pink-600'>
@@ -188,7 +198,7 @@ const PaymentPage = () => {
 						<a href='#' className='hover:text-pink-600'>
 							Terms
 						</a>
-						<a href='#' className='hover:text-pink-600'>
+						<a href='register' className='hover:text-pink-600'>
 							Support
 						</a>
 					</div>
