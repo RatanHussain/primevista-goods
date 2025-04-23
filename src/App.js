@@ -2,16 +2,14 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
 import StudentDashboard from './pages/StudentDashboard';
 import PaymentPage from './pages/PaymentPage';
-import Login from './pages/Login';
+import Login from './components/Login';
 import Register from './pages/Register';
 
 function App() {
 	return (
 		<Router >
-			<Navbar />
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/student-dashboard' element={<StudentDashboard />} />

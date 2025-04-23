@@ -33,7 +33,7 @@ const StudentDashboard = () => {
 		<div className='min-h-screen flex flex-col bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700'>
 			{showNavbar && <Navbar />}
 
-			<main className='flex flex-col md:flex-row flex-grow pt-24 mt-5 px-4 gap-6'>
+			<main className='flex flex-col md:flex-row flex-grow pt-24 px-4 gap-6'>
 				{/* Sticky video on all devices */}
 				<div className='w-full md:w-2/3 sticky top-0 z-10 h-fit bg-gray-900/80 backdrop-blur-sm p-3 rounded-md shadow-md'>
 					<h3 className='text-white text-center text-lg sm:text-xl md:text-2xl font-semibold mb-3 px-4 leading-snug break-words'>
