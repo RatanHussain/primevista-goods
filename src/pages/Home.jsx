@@ -67,10 +67,12 @@ function Home() {
 		}
 	};
 	return (
-		<div className='p-8'>
-			<h1 className='text-2xl font-bold'>Welcome to PrimeVista Goods</h1>
-			<p className='mt-2 text-gray-600'>Learn. Grow. Succeed.</p>
-			<div className='max-w-md mx-auto mt-12 p-8 border rounded shadow'>
+		<div className='flex flex-col p-8 bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen pt-20'>
+			<h1 className='text-xl font-bold text-gray-800 text-center'>
+				Welcome to PrimeVista Goods
+			</h1>
+			<p className='mt-2 text-gray-600 text-center'>Learn. Grow. Succeed.</p>
+			<div className='flex flex-col items-center justify-center flex max-w-md mx-auto mt-12 p-8 border rounded shadow'>
 				<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
 				<form onSubmit={handleLogin} className='space-y-4'>
 					<input
@@ -102,6 +104,24 @@ function Home() {
 					</a>
 				</p>
 			</div>
+			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
+				<div className='space-y-2'>
+					<p className='text-sm'>
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+					</p>
+					<div className='space-x-4'>
+						<a href='#' className='hover:text-pink-600'>
+							Privacy
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Terms
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Support
+						</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 }

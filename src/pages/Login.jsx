@@ -26,12 +26,12 @@ function Login() {
 				role: 'admin',
 			};
 			localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
-			window.location.href = '/instructor-dashboard';
+			window.location.href = '/student-dashboard';
 			return;
 		}
 
 		// Allowed student list
-		const allowedStudents = [ 
+		const allowedStudents = [
 			{
 				name: 'Rashof',
 				email: 'operation@rashof.com',
@@ -67,37 +67,57 @@ function Login() {
 	};
 
 	return (
-		<div className='max-w-md mx-auto mt-12 p-8 border rounded shadow'>
-			<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
-			<form onSubmit={handleLogin} className='space-y-4'>
-				<input
-					type='email'
-					placeholder='Email'
-					className='w-full border px-4 py-2 rounded'
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					required
-				/>
-				<input
-					type='password'
-					placeholder='Password'
-					className='w-full border px-4 py-2 rounded'
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					required
-				/>
-				<button
-					type='submit'
-					className='w-full bg-primary hover:bg-blue-700 text-white py-2 rounded'>
-					Login
-				</button>
-			</form>
-			<p className='text-sm mt-4 text-gray-600'>
-				Don't have an account?{' '}
-				<a href='/register' className='text-blue-600 underline'>
-					Register
-				</a>
-			</p>
+		<div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen'>
+			<div className='max-w-md mx-auto p-8 border rounded shadow '>
+				<h2 className='text-2xl font-bold mb-6'>Login to Your Account</h2>
+				<form onSubmit={handleLogin} className='space-y-4'>
+					<input
+						type='email'
+						placeholder='Email'
+						className='w-full border px-4 py-2 rounded'
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+					/>
+					<input
+						type='password'
+						placeholder='Password'
+						className='w-full border px-4 py-2 rounded'
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						required
+					/>
+					<button
+						type='submit'
+						className='w-full bg-primary hover:bg-blue-700 text-white py-2 rounded'>
+						Login
+					</button>
+				</form>
+				<p className='text-sm mt-4 text-gray-600'>
+					Don't have an account?{' '}
+					<a href='/register' className='text-blue-600 underline'>
+						Register
+					</a>
+				</p>
+			</div>
+			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
+				<div className='space-y-2'>
+					<p className='text-sm'>
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+					</p>
+					<div className='space-x-4'>
+						<a href='#' className='hover:text-pink-600'>
+							Privacy
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Terms
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Support
+						</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 }

@@ -79,43 +79,45 @@ const PaymentPage = () => {
 	};
 
 	return (
-		<div className='max-w-xl mx-auto mt-8 p-6 border rounded shadow'>
-			<h2 className='text-2xl font-bold mb-4 text-center'>
-				💳 Payment Instructions
-			</h2>
+		<div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 min-h-screen '>
 
-			<p className='text-green-600 font-semibold text-center'>
-				You can choose any of these payment method
-			</p>
-			<div className='my-2 bg-gray-100 p-4 rounded'>
-				<img
-					className='h-10 mx-auto'
-					src='https://logos-world.net/wp-content/uploads/2024/10/Bkash-Logo-500x281.png'
-					alt='Bkash'
-				/>
-				<p className='mb-2 text-red-500'>
-					<strong className='text-black'>Account Name:</strong> bKash
+			<div className='max-w-xl pt-10 mx-auto mt-10 p-6 border rounded shadow '>
+				<h2 className='text-2xl font-bold mb-4 text-center'>
+					💳 Payment Instructions
+				</h2>
+
+				<p className='text-green-600 font-semibold text-center'>
+					You can choose any of these payment method
 				</p>
-				<p className='mb-2'>
-					<strong>bKash Number:</strong>{' '}
-					<span className='text-blue-700'>+880 1735 853640</span>
-				</p>
-			</div>
-			<div className='my-2 bg-gray-100 p-4 rounded'>
-				<img
-					className='h-10 mx-auto'
-					src='https://www.logo.wine/a/logo/Nagad/Nagad-Logo.wine.svg'
-					alt='Nagad'
-				/>
-				<p className='mb-2 text-red-500'>
-					<strong className='text-black'>Account Name:</strong> Nagad
-				</p>
-				<p className='mb-2'>
-					<strong>Nagad Number:</strong>{' '}
-					<span className='text-blue-700'>+880 1766 074125</span>
-				</p>
-			</div>
-			{/* <div className='my-2 bg-gray-100 p-4 rounded'>
+				<div className='my-2 bg-gray-100 p-4 rounded'>
+					<img
+						className='h-10 mx-auto'
+						src='https://logos-world.net/wp-content/uploads/2024/10/Bkash-Logo-500x281.png'
+						alt='Bkash'
+					/>
+					<p className='mb-2 text-red-500'>
+						<strong className='text-black'>Account Name:</strong> bKash
+					</p>
+					<p className='mb-2'>
+						<strong>bKash Number:</strong>{' '}
+						<span className='text-blue-700'>+880 1735 853640</span>
+					</p>
+				</div>
+				<div className='my-2 bg-gray-100 p-4 rounded'>
+					<img
+						className='h-10 mx-auto'
+						src='https://www.logo.wine/a/logo/Nagad/Nagad-Logo.wine.svg'
+						alt='Nagad'
+					/>
+					<p className='mb-2 text-red-500'>
+						<strong className='text-black'>Account Name:</strong> Nagad
+					</p>
+					<p className='mb-2'>
+						<strong>Nagad Number:</strong>{' '}
+						<span className='text-blue-700'>+880 1766 074125</span>
+					</p>
+				</div>
+				{/* <div className='my-2 bg-gray-100 p-4 rounded'>
 				<img
 					className='h-10 mx-auto'
 					src='https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png'
@@ -130,49 +132,68 @@ const PaymentPage = () => {
 				</p>
 			</div> */}
 
-			{submitted ? (
-				<p className='text-green-600 font-semibold text-center'>
-					✅ Your payment proof has been submitted! We'll contact you soon.
-				</p>
-			) : (
-				<form onSubmit={handleSubmit} className='space-y-4'>
-					<input
-						type='text'
-						name='name'
-						placeholder='Enroll Amount (e.g. 10,000 BDT)'
-						onChange={handleChange}
-						required
-						className='w-full border px-3 py-2 rounded'
-					/>
-					<input
-						type='email'
-						name='email'
-						placeholder='Your Email'
-						onChange={handleChange}
-						required
-						className='w-full border px-3 py-2 rounded'
-					/>
-					<input
-						type='text'
-						name='password'
-						placeholder='New Password'
-						onChange={handleChange}
-						required
-						className='w-full border px-3 py-2 rounded'
-					/>
-					<input
-						type='file'
-						accept='image/*,application/pdf'
-						onChange={handleFileChange}
-						className='w-full border px-3 py-2 rounded'
-					/>
-					<button
-						type='submit'
-						className='w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
-						Submit Payment Proof
-					</button>
-				</form>
-			)}
+				{submitted ? (
+					<p className='text-green-600 font-semibold text-center'>
+						✅ Your payment proof has been submitted! We'll contact you soon.
+					</p>
+				) : (
+					<form onSubmit={handleSubmit} className='space-y-4'>
+						<input
+							type='text'
+							name='name'
+							placeholder='Enroll Amount (e.g. 10,000 BDT)'
+							onChange={handleChange}
+							required
+							className='w-full border px-3 py-2 rounded'
+						/>
+						<input
+							type='email'
+							name='email'
+							placeholder='Your Email'
+							onChange={handleChange}
+							required
+							className='w-full border px-3 py-2 rounded'
+						/>
+						<input
+							type='text'
+							name='password'
+							placeholder='New Password'
+							onChange={handleChange}
+							required
+							className='w-full border px-3 py-2 rounded'
+						/>
+						<input
+							type='file'
+							accept='image/*,application/pdf'
+							onChange={handleFileChange}
+							className='w-full border px-3 py-2 rounded'
+						/>
+						<button
+							type='submit'
+							className='w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
+							Submit Payment Proof
+						</button>
+					</form>
+				)}
+			</div>
+			<footer className='fixed bottom-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md text-gray-700 text-center py-4 shadow-inner z-50'>
+				<div className='space-y-2'>
+					<p className='text-sm'>
+						&copy; {new Date().getFullYear()} PrimeVista Goods. All rights reserved.
+					</p>
+					<div className='space-x-4'>
+						<a href='#' className='hover:text-pink-600'>
+							Privacy
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Terms
+						</a>
+						<a href='#' className='hover:text-pink-600'>
+							Support
+						</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 };

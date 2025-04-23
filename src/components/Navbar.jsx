@@ -9,8 +9,8 @@ function Navbar() {
 
 
 	return (
-		<nav className='bg-white shadow-md px-6 py-4 flex justify-between items-center'>
-			<Link to='/' className='text-xl font-bold text-primary'>
+		<nav className='bg-white shadow-md px-6 mb-10 py-5 flex justify-between items-center w-full fixed top-0 left-0 z-50 bg-white bg-opacity-50 backdrop-blur-md shadow-sm'>
+			<Link to='/' className='text-xl font-bold text-primary text-xl font-bold text-gray-800'>
 				PrimeVista Goods
 			</Link>
 			<div className='flex gap-4'>
