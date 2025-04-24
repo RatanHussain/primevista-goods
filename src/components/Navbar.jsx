@@ -15,6 +15,13 @@ function Navbar() {
 			</div>
 
 			<div className='flex flex-row sm:flex-row gap-2 sm:gap-4 mt-2 sm:mt-0 text-sm sm:text-base justify-center sm:justify-end'>
+				{user && (
+					<Link
+						to='/student-dashboard'
+						className='text-white hover:text-white px-3 py-1 rounded-md bg-gradient-to-r from-purple-500 to-indigo-500 sm:bg-transparent sm:text-white sm:hover:text-white sm:px-3 sm:py-1'>
+						Dashboard
+					</Link>
+				)}
 				<Link
 					to='/payment'
 					className='text-white hover:text-white px-3 py-1 rounded-md bg-gradient-to-r from-purple-500 to-indigo-500 sm:bg-transparent sm:text-white sm:hover:text-white sm:px-3 sm:py-1'>

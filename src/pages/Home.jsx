@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Form from '../components/Form';
+import PlaylistCard from '../components/PlaylistCard';
 
 function Home() {
 	const [email, setEmail] = useState('');
@@ -102,7 +103,13 @@ function Home() {
 				</Link>
 			</div>
 
-			<Form />
+			<PlaylistCard
+				title='FBA for Beginners (2025)'
+				description='Start Your Amazon FBA Journey- Total 36 Lessons.'
+				imageUrl='https://www.upflip.com/wp-content/uploads/2024/12/Amazon-FBA-startup-guide-1024x683.jpg'
+			/>
+
+			{/* <Form /> */}
 
 			<Footer />
 		</div>
