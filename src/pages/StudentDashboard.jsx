@@ -70,6 +70,7 @@ const StudentDashboard = () => {
 											: 'bg-white'
 									}`}
 									onClick={() => setSelectedVideo(video)}>
+									🎬
 									{video.title}
 								</button>
 							</li>

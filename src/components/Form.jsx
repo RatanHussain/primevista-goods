@@ -2,70 +2,68 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { app } from '../firebase'; // adjust path if needed
 
 function Form() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
 
-	const handleLogin = (e) => {
+	const auth = getAuth(app);
+	const db = getFirestore(app);
+
+	const handleLogin = async (e) => {
 		e.preventDefault();
+		setLoading(true);
+		setError('');
 
-		// Admin login
-		if (email === 'mdratanmia7395@gmail.com' && password === 'Ratan7395') {
-			const adminUser = {
-				name: 'RatanLLC',
+		try {
+			const userCredential = await signInWithEmailAndPassword(
+				auth,
 				email,
-				role: 'admin',
-			};
-			localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
-			window.location.href = '/student-dashboard';
-			return;
-		}
+				password
+			);
+			const user = userCredential.user;
 
-		// Allowed student list
-		const allowedStudents = [
-			{
-				name: 'Rashof',
-				email: 'operation@rashof.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Ratan Mia',
-				email: 'mdratanmia7096@gmail.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Vista',
-				email: 'primevistagoods@gmail.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Belayet',
-				email: 'smbelayet99@gmail.com',
-				password: 'belayet123',
-			},
-		];
+			const docRef = doc(db, 'students', user.uid);
+			const docSnap = await getDoc(docRef);
 
-		const student = allowedStudents.find(
-			(s) => s.email === email && s.password === password
-		);
+			if (docSnap.exists()) {
+				const userData = docSnap.data();
 
-		if (student) {
-			const studentUser = {
-				name: student.name,
-				email: student.email,
-				role: 'student',
-			};
-			localStorage.setItem('loggedInUser', JSON.stringify(studentUser));
-			window.location.href = '/student-dashboard';
-		} else {
-			alert('Invalid credentials.');
+				localStorage.setItem(
+					'loggedInUser',
+					JSON.stringify({
+						name: userData.name,
+						email: userData.email,
+						role: 'student',
+					})
+				);
+
+				// Redirect based on isPaid status
+				if (userData.isPaid) {
+					window.location.href = '/student-dashboard';
+				} else {
+					window.location.href = '/contact';
+				}
+			} else {
+				setError('User data not found in database.');
+			}
+		} catch (err) {
+			console.error(err);
+			setError('Login failed: ' + err.message);
+		} finally {
+			setLoading(false);
 		}
 	};
 
 	return (
 		<div className='flex justify-center'>
-			<div className='w-full mb-10 max-w-md bg-white bg-opacity-80 backdrop-blur p-7 rounded-lg shadow'>
+			<div className='w-full mb-10 max-w-md bg-white bg-opacity-80 backdrop-blur p-7 rounded-lg shadow mt-14'>
 				<h2 className='text-xl md:text-2xl font-bold mb-6 text-center text-gray-800'>
 					Login to Your Account
 				</h2>
@@ -78,24 +76,44 @@ function Form() {
 						onChange={(e) => setEmail(e.target.value)}
 						required
 					/>
-					<input
+					{/* <input
 						type='password'
 						placeholder='Password'
 						className='w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						required
-					/>
+					/> */}
+
+					<div className='relative'>
+						<input
+							type={showPassword ? 'text' : 'password'}
+							placeholder='Password'
+							className='w-full border border-gray-300 px-4 py-2 pr-12 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+							required
+						/>
+						<button
+							type='button'
+							onClick={() => setShowPassword(!showPassword)}
+							className='absolute right-3 top-1/2 transform -translate-y-1/2 text-lg text-gray-600'>
+							{showPassword ? '🙈' : '👁️'}
+						</button>
+					</div>
+
+					{error && <p className='text-red-500 text-sm'>{error}</p>}
 					<button
 						type='submit'
-						className='w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition'>
-						Login
+						className='w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition'
+						disabled={loading}>
+						{loading ? 'Logging in...' : 'Login'}
 					</button>
 				</form>
 				<p className='text-sm mt-4 text-center text-gray-600'>
 					Don't have an account?{' '}
 					<Link
-						to='/register'
+						to='/Register'
 						className='text-blue-600 underline hover:text-blue-800'>
 						Register
 					</Link>

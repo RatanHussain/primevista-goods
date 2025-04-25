@@ -84,6 +84,11 @@ function Home() {
 				confidence 💸 Build a business that works while you sleep
 			</p>
 
+				<PlaylistCard
+					title='FBA for Beginners (2025)'
+					description='Start Your Amazon FBA Journey- Total 36 Lessons.'
+					imageUrl='https://www.upflip.com/wp-content/uploads/2024/12/Amazon-FBA-startup-guide-1024x683.jpg'
+				/>
 			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
 				📱 WhatsApp (Bangladesh):{' '}
 				<a
@@ -103,11 +108,6 @@ function Home() {
 				</Link>
 			</div>
 
-			<PlaylistCard
-				title='FBA for Beginners (2025)'
-				description='Start Your Amazon FBA Journey- Total 36 Lessons.'
-				imageUrl='https://www.upflip.com/wp-content/uploads/2024/12/Amazon-FBA-startup-guide-1024x683.jpg'
-			/>
 
 			{/* <Form /> */}
 

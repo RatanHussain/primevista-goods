@@ -9,7 +9,7 @@ function PlaylistCard({ title, description, imageUrl }) {
 	const destination = user ? '/student-dashboard' : '/login';
 
 	return (
-		<Link className='flex justify-center mb-20' to={destination}>
+		<Link className='flex justify-center mb-10' to={destination}>
 			<div className='bg-white rounded-2xl shadow-md overflow-hidden w-72 hover:shadow-xl transition-shadow duration-300 cursor-pointer'>
 				<div className='relative'>
 					<img

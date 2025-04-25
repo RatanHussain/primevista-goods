@@ -4,7 +4,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const ContactPage = () => {
+const Contact = () => {
 	return (
 		<div className='min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300 flex flex-col'>
 			<Navbar />
@@ -12,7 +12,7 @@ const ContactPage = () => {
 			<main className='flex-1 flex items-center justify-center px-4 pt-20 pb-12 sm:pt-20'>
 				<div className='w-full max-w-xl bg-white bg-opacity-80 backdrop-blur-md p-8 rounded-2xl shadow-xl'>
 					<h2 className='text-3xl font-bold text-center text-gray-800 mb-4'>
-						Contact Me / Register Now
+						Please contact to access course
 					</h2>
 
 					<p className='text-center text-gray-700 mb-6'>
@@ -73,4 +73,4 @@ const ContactPage = () => {
 	);
 };
 
-export default ContactPage;
+export default Contact;
