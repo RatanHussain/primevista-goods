@@ -7,6 +7,7 @@ import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { app } from '../firebase'; // adjust the path if needed
 import Navbar from './Navbar';
 import Welcome from './Welcome';
+import Footer from './Footer';
 
 function Register() {
 	const [name, setName] = useState('');
@@ -117,7 +118,8 @@ function Register() {
 				</p>
                 </main>
 			</div>
-            <Welcome/>
+			<Welcome />
+			<Footer />
 		</div>
 	);
 }

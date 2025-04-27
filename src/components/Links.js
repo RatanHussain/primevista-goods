@@ -131,6 +131,14 @@ const videos = [
 		url: 'https://drive.google.com/file/d/1xW9kRh7uXBwlauaK8tePpNphNUO926DG/preview',
 	},
 	{
+		title: '27. 2 Resources.pdf',
+		url: 'https://drive.google.com/file/d/1_WwfRU5imab6xKjmHedfXK2nFgmu40by/preview',
+	},
+	{
+		title: '28. CATEGORY.pdf',
+		url: 'https://drive.google.com/file/d/1iFwPDvQqJFGIX9zLicJZ3FTOROKUEK52/preview',
+	},
+	{
 		title: '29. PREP-EQUIPMENT [FPC_01].pdf',
 		url: 'https://drive.google.com/file/d/1WTENiPmWDtJWo5x2UYNoO5btKxLgdrt_/preview',
 	},
