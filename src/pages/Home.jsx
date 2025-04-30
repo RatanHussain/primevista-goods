@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Form from '../components/Form';
 import PlaylistCard from '../components/PlaylistCard';
 import StudentDashboard from './StudentDashboard';
+import CardList from '../components/CardList';
 
 function Home() {
 	const [email, setEmail] = useState('');
@@ -47,20 +48,11 @@ function Home() {
 			</p>
 
 			<div>
-				<h1 className='text-center font-bold text-3xl md:text-4xl font-bold text-gray-800 text-center'>Courses</h1>
+				<h1 className='text-center font-bold text-3xl md:text-4xl font-bold text-gray-800 text-center'>
+					Courses
+				</h1>
 				<div className='flex flex-wrap justify-center flex-grow flex items-center mt-5 py-5 justify-center sm:pt-3'>
-					<PlaylistCard
-						title='FBA Wholesale Business (2025)'
-						description='Start Your Amazon FBA Million Dollar Business- Total 36 Lessons.'
-						imageUrl='https://www.ebrahimllc.com/wp-content/uploads/2024/06/amazon-full-fba-course.jpg'
-						landing='/Ebrahim'
-					/>
-					<PlaylistCard
-						title='FBA for Beginners (2025)'
-						description='Start Your Amazon FBA Journey- Total 36 Lessons.'
-						imageUrl='https://scontent.fruh2-1.fna.fbcdn.net/v/t39.30808-6/275270172_118915677386649_3827471218937430434_n.png?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEOkdN6ZMo0X9ImnrhT6KXOwIpW3CDdad3AilbcIN1p3dbcXdfg6uh40Tr0zXlBbuK11tzTHGoUMZ8QQCu3XKzJ&_nc_ohc=ZkEJXgjpmC4Q7kNvwH9qzhm&_nc_oc=AdnZjjvyXIfUdZXQTbYcLx8bqv3XQ04BG7Ey2EmYWQ_K4EHAiu1xmPXGF8GMwvdh4BTYgpNSG2xFkAgel2tfQVrc&_nc_zt=23&_nc_ht=scontent.fruh2-1.fna&_nc_gid=DDoqV4GyUKnpEOsYmz4n5Q&oh=00_AfGJ2YI5NpOVQ_Bkm4JUhe9FSxWbB_pMj78ehu7rSwo2pw&oe=6817C7D2'
-						landing='/ShahidDashboard'
-					/>
+					<CardList />
 				</div>
 			</div>
 
