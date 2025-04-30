@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Form from '../components/Form';
 import PlaylistCard from '../components/PlaylistCard';
+import StudentDashboard from './StudentDashboard';
 
 function Home() {
 	const [email, setEmail] = useState('');
@@ -23,45 +24,6 @@ function Home() {
 			localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
 			window.location.href = '/student-dashboard';
 			return;
-		}
-
-		const allowedStudents = [
-			{
-				name: 'Rashof',
-				email: 'operation@rashof.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Ratan Mia',
-				email: 'mdratanmia7096@gmail.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Vista',
-				email: 'primevistagoods@gmail.com',
-				password: 'Ratan@7395',
-			},
-			{
-				name: 'Belayet',
-				email: 'smbelayet99@gmail.com',
-				password: 'belayet123',
-			},
-		];
-
-		const student = allowedStudents.find(
-			(s) => s.email === email && s.password === password
-		);
-
-		if (student) {
-			const studentUser = {
-				name: student.name,
-				email: student.email,
-				role: 'student',
-			};
-			localStorage.setItem('loggedInUser', JSON.stringify(studentUser));
-			window.location.href = '/student-dashboard';
-		} else {
-			alert('Invalid credentials.');
 		}
 	};
 
@@ -84,11 +46,24 @@ function Home() {
 				confidence 💸 Build a business that works while you sleep
 			</p>
 
-				<PlaylistCard
-					title='FBA for Beginners (2025)'
-					description='Start Your Amazon FBA Journey- Total 36 Lessons.'
-					imageUrl='https://www.upflip.com/wp-content/uploads/2024/12/Amazon-FBA-startup-guide-1024x683.jpg'
-				/>
+			<div>
+				<h1 className='text-center font-bold text-3xl md:text-4xl font-bold text-gray-800 text-center'>Courses</h1>
+				<div className='flex flex-wrap justify-center flex-grow flex items-center mt-5 py-5 justify-center sm:pt-3'>
+					<PlaylistCard
+						title='FBA Wholesale Business (2025)'
+						description='Start Your Amazon FBA Million Dollar Business- Total 36 Lessons.'
+						imageUrl='https://www.ebrahimllc.com/wp-content/uploads/2024/06/amazon-full-fba-course.jpg'
+						landing='/Ebrahim'
+					/>
+					<PlaylistCard
+						title='FBA for Beginners (2025)'
+						description='Start Your Amazon FBA Journey- Total 36 Lessons.'
+						imageUrl='https://scontent.fruh2-1.fna.fbcdn.net/v/t39.30808-6/275270172_118915677386649_3827471218937430434_n.png?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEOkdN6ZMo0X9ImnrhT6KXOwIpW3CDdad3AilbcIN1p3dbcXdfg6uh40Tr0zXlBbuK11tzTHGoUMZ8QQCu3XKzJ&_nc_ohc=ZkEJXgjpmC4Q7kNvwH9qzhm&_nc_oc=AdnZjjvyXIfUdZXQTbYcLx8bqv3XQ04BG7Ey2EmYWQ_K4EHAiu1xmPXGF8GMwvdh4BTYgpNSG2xFkAgel2tfQVrc&_nc_zt=23&_nc_ht=scontent.fruh2-1.fna&_nc_gid=DDoqV4GyUKnpEOsYmz4n5Q&oh=00_AfGJ2YI5NpOVQ_Bkm4JUhe9FSxWbB_pMj78ehu7rSwo2pw&oe=6817C7D2'
+						landing='/ShahidDashboard'
+					/>
+				</div>
+			</div>
+
 			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
 				📱 WhatsApp (Bangladesh):{' '}
 				<a
@@ -107,7 +82,6 @@ function Home() {
 					Buy Now
 				</Link>
 			</div>
-
 
 			{/* <Form /> */}
 

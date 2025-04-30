@@ -44,7 +44,7 @@ function Navbar() {
 
 			<div className='flex flex-wrap gap-2 sm:gap-4 mt-2 sm:mt-0 text-sm sm:text-base items-center justify-center sm:justify-end w-full sm:w-auto'>
 				<Link
-					to='/student-dashboard'
+					to='/StudentDashboard'
 					className='text-white px-3 py-1 rounded-md bg-gradient-to-r from-purple-500 to-indigo-500'>
 					Dashboard
 				</Link>

@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
-import videos from '../components/Links';
+import videos from '../Data/Ebrahim';
 
-const StudentDashboard = () => {
+
+const Ebrahim = () => {
 	const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 	const [showNavbar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
@@ -33,7 +34,8 @@ const StudentDashboard = () => {
 		<div className='min-h-screen flex flex-col bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700'>
 			{showNavbar && <Navbar />}
 
-			<main className='flex flex-col md:flex-row flex-grow pt-24 px-4 gap-6'>
+                <h1 className='text-green-600 text-center sm:text-3xl mt-28 font-bold'>Ebrahim Wholesale</h1>
+            <main className='flex flex-col md:flex-row flex-grow  mt-5 px-4 gap-6 pb-10'>
 				{/* Sticky video on all devices */}
 				<div className='w-full md:w-2/3 sticky top-0 z-10 h-fit bg-gray-900/80 backdrop-blur-sm p-3 rounded-md shadow-md'>
 					<h3 className='text-white text-center text-lg sm:text-xl md:text-2xl font-semibold mb-3 px-4 leading-snug break-words'>
@@ -70,6 +72,7 @@ const StudentDashboard = () => {
 											: 'bg-white'
 									}`}
 									onClick={() => setSelectedVideo(video)}>
+									🎬
 									{video.title}
 								</button>
 							</li>
@@ -83,4 +86,4 @@ const StudentDashboard = () => {
 	);
 };
 
-export default StudentDashboard;
+export default Ebrahim;

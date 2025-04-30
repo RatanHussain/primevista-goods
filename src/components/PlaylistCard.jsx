@@ -4,12 +4,12 @@ import React from 'react';
 import { Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-function PlaylistCard({ title, description, imageUrl }) {
+function PlaylistCard({ title, description, imageUrl, landing }) {
 	const user = JSON.parse(localStorage.getItem('loggedInUser'));
-	const destination = user ? '/student-dashboard' : '/login';
+	const destination = user ? landing : '/login';
 
 	return (
-		<Link className='flex justify-center mb-10' to={destination}>
+		<Link className='flex justify-center mx-2 mb-10' to={destination}>
 			<div className='bg-white rounded-2xl shadow-md overflow-hidden w-72 hover:shadow-xl transition-shadow duration-300 cursor-pointer'>
 				<div className='relative'>
 					<img
