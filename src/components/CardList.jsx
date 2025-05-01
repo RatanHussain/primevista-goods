@@ -16,7 +16,7 @@ const CardList = () => {
 			<PlaylistCard
 				title='Amazon A-Z With Shahid'
 				description='Shahid Anwar all courses in one place- Be Multimillionaire With Shahid Anwar.'
-				imageUrl='https://www.skilliency.com/uploads/thumbnails/course_thumbnails/optimized/course_thumbnail_default-new_151731959097.jpg'
+				imageUrl='https://i.ytimg.com/vi/82HYTRAdqhY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDunY24fwz7E1Fma--yZPZmFryP9A'
 				landing='/ShahidDashboard'
 			/>
 		</div>

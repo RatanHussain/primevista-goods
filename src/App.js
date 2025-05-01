@@ -14,6 +14,8 @@ import ShahidDashboard from './Courses/Shahid/ShahidDashboard';
 import ShahidFBA from './Courses/Shahid/Shahid-FBA';
 import StudentDashboard from './pages/StudentDashboard';
 import ShahidFBM from './Courses/Shahid/Shahid-FBM';
+import ShahidWholeSale from './Courses/Shahid/Shahid-WholeSale';
+import LiveClasses from './Courses/Shahid/Live-Classes';
 
 function App() {
 	return (
@@ -55,6 +57,22 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<ShahidFBM />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/ShahidWholeSale'
+					element={
+						<ProtectedRoute>
+							<ShahidWholeSale />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/LiveClasses'
+					element={
+						<ProtectedRoute>
+							<LiveClasses />
 						</ProtectedRoute>
 					}
 				/>
