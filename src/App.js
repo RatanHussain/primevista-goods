@@ -13,6 +13,7 @@ import Ebrahim from './Courses/Ebrahim';
 import ShahidDashboard from './Courses/Shahid/ShahidDashboard';
 import ShahidFBA from './Courses/Shahid/Shahid-FBA';
 import StudentDashboard from './pages/StudentDashboard';
+import ShahidFBM from './Courses/Shahid/Shahid-FBM';
 
 function App() {
 	return (
@@ -46,6 +47,14 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<ShahidFBA />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/ShahidFBM'
+					element={
+						<ProtectedRoute>
+							<ShahidFBM />
 						</ProtectedRoute>
 					}
 				/>
