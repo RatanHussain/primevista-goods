@@ -51,7 +51,7 @@ function Home() {
 				<h1 className='text-center font-bold text-3xl md:text-4xl font-bold text-gray-800 text-center'>
 					Courses
 				</h1>
-				<div className='flex flex-wrap justify-center flex-grow flex items-center mt-5 py-5 justify-center sm:pt-3'>
+				<div className='flex flex-wrap justify-center flex-grow flex items-center justify-center'>
 					<CardList />
 				</div>
 			</div>
