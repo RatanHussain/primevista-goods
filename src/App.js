@@ -16,6 +16,7 @@ import StudentDashboard from './pages/StudentDashboard';
 import ShahidFBM from './Courses/Shahid/Shahid-FBM';
 import ShahidWholeSale from './Courses/Shahid/Shahid-WholeSale';
 import LiveClasses from './Courses/Shahid/Live-Classes';
+import Airbnb from './Courses/Shahid/Airbnb';
 
 function App() {
 	return (
@@ -73,6 +74,14 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<LiveClasses />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/Airbnb'
+					element={
+						<ProtectedRoute>
+							<Airbnb />
 						</ProtectedRoute>
 					}
 				/>

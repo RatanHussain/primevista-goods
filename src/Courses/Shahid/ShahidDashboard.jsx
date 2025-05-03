@@ -37,6 +37,12 @@ const ShahidDashboard = () => {
 					imageUrl='https://s2.dmcdn.net/v/Ub6RL1Zo-njC1SuBf/x1080'
 					landing='/LiveClasses'
 				/>
+				<PlaylistCard
+					title='Airbnb AR Course'
+					description='Amazon Airbnb AR Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://learnwithwasif.com/wp-content/uploads/2024/08/AIR.png'
+					landing='/Airbnb'
+				/>
 			</div>
 			<Footer />
 		</div>

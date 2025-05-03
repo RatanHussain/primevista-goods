@@ -4,11 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
-import videos from '../../Data/Shahid/LiveClasses';
+import videos from '../../Data/Shahid/Airbnb';
 
-
-
-const LiveClasses = () => {
+const Airbnb = () => {
 	const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 	const [showNavbar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
@@ -35,7 +33,7 @@ const LiveClasses = () => {
 		<div className='min-h-screen flex flex-col bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700'>
 			{showNavbar && <Navbar />}
 			<h1 className='text-green-600 text-center sm:text-3xl mt-28 font-bold'>
-				Shahid Anwar Live Classes
+				Shahid Anwar Airbnb
 			</h1>
 			<main className='flex flex-col md:flex-row flex-grow  mt-5 px-4 gap-6 pb-10'>
 				{/* Sticky video on all devices */}
@@ -88,4 +86,4 @@ const LiveClasses = () => {
 	);
 };
 
-export default LiveClasses;
+export default Airbnb;
