@@ -8,9 +8,9 @@ import Footer from '../../components/Footer';
 const ShahidDashboard = () => {
 	return (
 		<div className='flex flex-col flex flex-col min-h-screen bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-300'>
-            <Navbar />
-            <h1 className='text-3xl md:text-4xl font-bold pt-10 text-gray-800 mt-24 text-center'>
-			    Shahid Anwar All Courses
+			<Navbar />
+			<h1 className='text-3xl md:text-4xl font-bold pt-10 text-gray-800 mt-24 text-center'>
+				Shahid Anwar All Courses
 			</h1>
 			<div className='flex flex-wrap justify-center mb-10 flex-grow flex items-center py-20 justify-center px-4 sm:pt-12'>
 				<PlaylistCard
@@ -42,6 +42,36 @@ const ShahidDashboard = () => {
 					description='Amazon Airbnb AR Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
 					imageUrl='https://learnwithwasif.com/wp-content/uploads/2024/08/AIR.png'
 					landing='/Airbnb'
+				/>
+				<PlaylistCard
+					title='DropShipping Course'
+					description='Amazon DropShipping Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://learnwithwasif.com/wp-content/uploads/2024/08/huge-1-768x432.png'
+					landing='/DropShipping'
+				/>
+				<PlaylistCard
+					title='FB MarketPlace Course'
+					description='Amazon FB MarketPlace Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://scontent.fruh2-1.fna.fbcdn.net/v/t39.30808-6/480801763_617111301044256_4354462632937169991_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KkDXx8JGPy0Q7kNvwHQTuZt&_nc_oc=Adn9swx6vkrWez7KdWaRluGsLYDoFvJ47zJsu_9uPWKbDv9OwFQ5kRhpYPngBt_cpBdpOXS-RDdTWOHPU-3ZUnoe&_nc_zt=23&_nc_ht=scontent.fruh2-1.fna&_nc_gid=0enLP7KH68WXsGURDHyFDg&oh=00_AfFZtaJkf84Bc2JPqah_bYSuxwOpMtbCoUAJRM4fEodonA&oe=681BEB27'
+					landing='/FbMarket'
+				/>
+				<PlaylistCard
+					title='Affiliate Marketing Course'
+					description='Amazon FB MarketPlace Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://eblogary.com/wp-content/uploads/2024/02/www.Eblogary.comCourses-2-768x432.png'
+					landing='/AffiliateMarketing'
+				/>
+				<PlaylistCard
+					title='Stock & Crypto Course'
+					description='Stock & Crypto Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://learnwithwasif.com/wp-content/uploads/2024/08/huge-2.png'
+					landing='/StockCrypto'
+				/>
+				<PlaylistCard
+					title='NFTs Course'
+					description='NFTs Course A-Z Expained- Be Multimillionaire Shahid Anwar.'
+					imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBNaDEvSAIkHQfbftLNGHhQr9jkjCYiBIHgZ6bE6rBI97ssJsPSg7FOhL0L1HWyyEt6lI&usqp=CAU'
+					landing='/NFTs'
 				/>
 			</div>
 			<Footer />

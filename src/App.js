@@ -17,6 +17,11 @@ import ShahidFBM from './Courses/Shahid/Shahid-FBM';
 import ShahidWholeSale from './Courses/Shahid/Shahid-WholeSale';
 import LiveClasses from './Courses/Shahid/Live-Classes';
 import Airbnb from './Courses/Shahid/Airbnb';
+import DropShipping from './Courses/Shahid/DropShipping';
+import FbMarket from './Courses/Shahid/FbMarket';
+import AffiliateMarketing from './Courses/Shahid/AffiliateMarketing';
+import StockCrypto from './Courses/Shahid/Stock&Crypto';
+import NFTs from './Courses/Shahid/NFTs';
 
 function App() {
 	return (
@@ -82,6 +87,46 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<Airbnb />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/DropShipping'
+					element={
+						<ProtectedRoute>
+							<DropShipping />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/FbMarket'
+					element={
+						<ProtectedRoute>
+							<FbMarket />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/AffiliateMarketing'
+					element={
+						<ProtectedRoute>
+							<AffiliateMarketing />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/StockCrypto'
+					element={
+						<ProtectedRoute>
+							<StockCrypto />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/NFTs'
+					element={
+						<ProtectedRoute>
+							<NFTs />
 						</ProtectedRoute>
 					}
 				/>
