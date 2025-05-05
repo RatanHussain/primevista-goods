@@ -22,6 +22,7 @@ import FbMarket from './Courses/Shahid/FbMarket';
 import AffiliateMarketing from './Courses/Shahid/AffiliateMarketing';
 import StockCrypto from './Courses/Shahid/Stock&Crypto';
 import NFTs from './Courses/Shahid/NFTs';
+import FbCourse from './Courses/FacebookCourse';
 
 function App() {
 	return (
@@ -127,6 +128,14 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<NFTs />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/FbCourse'
+					element={
+						<ProtectedRoute>
+							<FbCourse />
 						</ProtectedRoute>
 					}
 				/>
