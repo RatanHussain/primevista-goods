@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/primevista-goods/static/css/main.cf16f226.css",
-    "main.js": "/primevista-goods/static/js/main.1803504a.js",
-    "static/js/453.6725c35a.chunk.js": "/primevista-goods/static/js/453.6725c35a.chunk.js",
-    "index.html": "/primevista-goods/index.html",
-    "main.cf16f226.css.map": "/primevista-goods/static/css/main.cf16f226.css.map",
-    "main.1803504a.js.map": "/primevista-goods/static/js/main.1803504a.js.map",
-    "453.6725c35a.chunk.js.map": "/primevista-goods/static/js/453.6725c35a.chunk.js.map"
+    "main.css": "/static/css/main.9ec0308a.css",
+    "main.js": "/static/js/main.addad2a5.js",
+    "static/js/453.6725c35a.chunk.js": "/static/js/453.6725c35a.chunk.js",
+    "index.html": "/index.html",
+    "main.9ec0308a.css.map": "/static/css/main.9ec0308a.css.map",
+    "main.addad2a5.js.map": "/static/js/main.addad2a5.js.map",
+    "453.6725c35a.chunk.js.map": "/static/js/453.6725c35a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf16f226.css",
-    "static/js/main.1803504a.js"
+    "static/css/main.9ec0308a.css",
+    "static/js/main.addad2a5.js"
   ]
 }
