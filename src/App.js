@@ -23,8 +23,44 @@ import AffiliateMarketing from './Courses/Shahid/AffiliateMarketing';
 import StockCrypto from './Courses/Shahid/Stock&Crypto';
 import NFTs from './Courses/Shahid/NFTs';
 import FbCourse from './Courses/FacebookCourse';
+import { useEffect } from 'react';
 
 function App() {
+	useEffect(() => {
+		// Block right-click
+		const handleContextMenu = (e) => {
+			e.preventDefault();
+		};
+
+		// Block key shortcuts
+		const handleKeyDown = (e) => {
+			// F12
+			if (e.keyCode === 123) {
+				e.preventDefault();
+			}
+			// Ctrl+Shift+I/J/C
+			if (
+				e.ctrlKey &&
+				e.shiftKey &&
+				['I', 'J', 'C'].includes(e.key.toUpperCase())
+			) {
+				e.preventDefault();
+			}
+			// Ctrl+U
+			if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+				e.preventDefault();
+			}
+		};
+
+		document.addEventListener('contextmenu', handleContextMenu);
+		document.addEventListener('keydown', handleKeyDown);
+
+		// Cleanup
+		return () => {
+			document.removeEventListener('contextmenu', handleContextMenu);
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	}, []);
 	return (
 		<Router>
 			<Routes>

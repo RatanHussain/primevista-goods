@@ -46,7 +46,7 @@ function Form() {
 
 				// Redirect based on isPaid status
 				if (userData.isPaid) {
-					window.location.href = '/student-dashboard';
+					window.location.href = '/ShahidDashboard';
 				} else {
 					window.location.href = '/contact';
 				}
