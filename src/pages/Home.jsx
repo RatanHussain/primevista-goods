@@ -8,6 +8,7 @@ import Form from '../components/Form';
 import PlaylistCard from '../components/PlaylistCard';
 import StudentDashboard from './StudentDashboard';
 import CardList from '../components/CardList';
+import PaymentCard from '../components/PaymentCard';
 
 function Home() {
 	const [email, setEmail] = useState('');
@@ -46,6 +47,14 @@ function Home() {
 				🛒 Learn how to find winning products 📦 Launch your first store with
 				confidence 💸 Build a business that works while you sleep
 			</p>
+
+			<div className='flex justify-center mb-8'>
+				<Link
+					to='/payment'
+					className='text-white px-6 py-3 bg-pink-500 rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
+					Buy Now
+				</Link>
+			</div>
 
 			<div>
 				<h1 className='text-center font-bold text-3xl md:text-4xl font-bold text-gray-800 text-center'>
