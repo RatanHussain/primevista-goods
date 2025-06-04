@@ -32,7 +32,11 @@ const ProtectedRoute = ({ children }) => {
 	}, []);
 
 	if (loading)
-		return <div className='text-center mt-10'>Checking access...</div>;
+		return (
+			<div className='flex items-center justify-center h-screen'>
+				<div className='animate-spin rounded-full h-20 w-20 border-4 border-blue-500 border-t-transparent'></div>
+			</div>
+		);
 
 	if (!allowed) return <Navigate to='/contact' replace />;
 
