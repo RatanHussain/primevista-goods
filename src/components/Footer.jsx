@@ -32,6 +32,7 @@ function Footer() {
 					</a>
 				</div>
 
+
 				<div className='flex justify-center gap-5 pt-3'>
 					<a
 						href='https://www.facebook.com/primevistagoods/'
@@ -62,6 +63,16 @@ function Footer() {
 						<FaTiktok size={22} />
 					</a>
 				</div>
+				<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
+				📱 WhatsApp (BD):{' '}
+				<a
+					href='https://wa.me/8801766074125'
+					target='_blank'
+					rel='noopener noreferrer'
+					className='text-pink-600 hover:underline'>
+					+880 1766 074125
+				</a>
+			</p>
 			</div>
 		</footer>
 	);

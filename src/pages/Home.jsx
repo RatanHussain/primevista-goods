@@ -9,6 +9,7 @@ import PlaylistCard from '../components/PlaylistCard';
 import StudentDashboard from './StudentDashboard';
 import CardList from '../components/CardList';
 import PaymentCard from '../components/PaymentCard';
+import { IoMdCart } from 'react-icons/io';
 
 function Home() {
 	const [email, setEmail] = useState('');
@@ -48,12 +49,23 @@ function Home() {
 				confidence 💸 Build a business that works while you sleep
 			</p>
 
-			<div className='flex justify-center mb-8'>
-				<Link
-					to='/payment'
-					className='text-white px-6 py-3 bg-pink-500 rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
-					Buy Now
-				</Link>
+			<div className='max-w-sm mx-auto bg-white rounded-2xl shadow-lg p-6 border border-gray-200 text-center my-8'>
+				<h2 className='text-2xl font-bold text-gray-800 mb-2'>Exclusive</h2>
+				<h2 className='text-2xl md:text-3xl font-bold text-pink-600 mb-4'>
+					Limited-Time Offer 🎉
+				</h2>
+				<div className=' text-red-500 line-through text-lg '>৳30,000</div>
+				<div className='text-4xl font-extrabold text-green-600 mb-2'>
+					৳10,000
+				</div>
+				<p className='text-gray-600 mb-4'>
+					Lifetime access with one-time payment
+				</p>
+				<a
+					href='/payment'
+					className='inline-block bg-green-600 text-white px-6 py-2 rounded-xl font-semibold hover:bg-green-700 transition'>
+					Pay Now
+				</a>
 			</div>
 
 			<div>
@@ -64,27 +76,54 @@ function Home() {
 					<CardList />
 				</div>
 			</div>
+			<div className='max-w-6xl mx-auto mb-12 px-4'>
+				<h2 className='text-center text-3xl md:text-4xl font-bold text-gray-800 mb-8'>
+					📸 Student Screenshot Views
+				</h2>
 
-			<p className='text-lg text-gray-700 text-center max-w-2xl mx-auto mb-3'>
-				📱 WhatsApp (Bangladesh):{' '}
-				<a
-					href='https://wa.me/8801766074125'
-					target='_blank'
-					rel='noopener noreferrer'
-					className='text-pink-600 hover:underline'>
-					+880 1766 074125
-				</a>
-			</p>
+				<p className='text-center text-gray-600 text-lg mb-6'>
+					See real results from our students — earnings, seller dashboards,
+					course completion, and more!
+				</p>
+				<p className='text-center text-gray-700 text-lg italic mb-6'>
+					🌟 Hundreds of students have launched their own Amazon stores and
+					started earning — your success story could be next!
+				</p>
 
-			<div className='flex justify-center mb-8'>
-				<Link
-					to='/payment'
-					className='text-white px-6 py-3 bg-pink-500 rounded-lg text-lg font-semibold hover:bg-pink-600 transition'>
-					Buy Now
-				</Link>
+				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+					{/* Replace image URLs with actual student screenshots */}
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/10/ss18.png'
+						alt='Student Screenshot 1'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/10/ss13.png'
+						alt='Student Screenshot 2'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/10/IMG_20241012_192406.png'
+						alt='Student Screenshot 3'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/10/ss12.png'
+						alt='Student Screenshot 3'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/02/IMG_20240226_004838.png'
+						alt='Student Screenshot 3'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+					<img
+						src='https://www.ebrahimllc.com/wp-content/uploads/2024/10/IMG_20241012_192406.png'
+						alt='Student Screenshot 3'
+						className='w-full h-full object-cover rounded-xl shadow-md border'
+					/>
+				</div>
 			</div>
-
-			{/* <Form /> */}
 
 			<Footer />
 		</div>
